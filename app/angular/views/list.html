@@ -1,3 +1,35 @@
 <div class="ui segment">
-	<h1 class="ui header">{{header}}</div>
+	<h1 class="ui header">Electron ToDo</h1>
+</div>
+<div class="ui compact segment" style="margin: 0 auto; width: 400px;">
+	<h1 class="ui dividing header">{{header}}</h1>
+	<div class="ui large relaxed list">
+		<div class="item" ng-repeat="item in items">
+			<i class="large middle aligned check icon"></i>
+			<div class="content">
+				<div class="header">{{item.name}}</div>
+				<div class="description">Created at {{item.dateCreated.format('H:m M/d/Y')}}</div>
+			</div>
+		</div>
+		<div class="item" style="cursor: pointer;" ng-hide="adding" ng-click="createItem()">
+			<i class="middle aligned plus icon"></i>
+			<div class="content">
+				<div class="header">Add</div>
+			</div>
+		</div>
+		<div class="item" ng-show="adding">
+			<i class="large green middle aligned plus icon"></i>
+			<div class="content">
+				<div class="ui action input">
+					<input id="itemName" type="text" ng-model="newItem" />
+					<button class="ui green icon button" ng-click="submitItem()">
+						<i class="large check icon"></i>
+					</button>
+					<button class="ui red icon button" ng-click="adding = false">
+						<i class="large remove icon"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
