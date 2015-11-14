@@ -18,3 +18,4 @@ node_modules/
 *.pyc
 debug.log
 npm-debug.log
+bower_components/
