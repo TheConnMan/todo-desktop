@@ -6,10 +6,10 @@
 	<div class="ui large relaxed list">
 		<div class="item" ng-repeat="item in items" ng-class="{complete: item.complete}">
 			<div class="right floated content" ng-mouseenter="item.hover = true" ng-mouseleave="item.hover = false">
-				<div class="ui large basic circular icon button" ng-hide="item.complete" ng-class="{green: item.hover}" ng-click="item.complete = true">
+				<div class="ui large basic circular icon button" ng-hide="item.complete" ng-class="{green: item.hover}" ng-click="item.complete = true; saveItems();">
 					<i class="check icon"></i>
 				</div>
-				<div class="ui large basic circular icon button" ng-show="item.complete" ng-class="{red: item.hover}" ng-click="item.complete = false">
+				<div class="ui large basic circular icon button" ng-show="item.complete" ng-class="{red: item.hover}" ng-click="item.complete = false; saveItems();">
 					<i class="undo icon"></i>
 				</div>
 			</div>
