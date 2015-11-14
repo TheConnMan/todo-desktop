@@ -1,11 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+	<head>
+		<title>ToDo App</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!-- build:css assets/css/app.css -->
+		<link rel="stylesheet" href="../bower_components/semantic/dist/semantic.min.css" />
+		<!-- endbuild -->
+	</head>
 	<body>
-		<h1>Hello World!</h1>
-		<script>
-			document.write(process.versions['electron'])
-		</script> on
-		<script>
-			document.write(process.platform)
-		</script>
+		<ng-view></ng-view>
+		<!-- build:js scripts/vendor.js -->
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/angular-route/angular-route.min.js"></script>
+		<script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/semantic/dist/semantic.min.js"></script>
+		<!-- endbuild -->
+
+		<!-- build:app scripts/app.js -->
+		<script src="./angular/app.js"></script>
+		<script src="./angular/controllers/listController.js"></script>
+		<!-- endbuild -->
 	</body>
+
 </html>
