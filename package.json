@@ -1,0 +1,14 @@
+{
+  "name": "todo-desktop",
+  "version": "0.1.0",
+  "description": "Demo desktop ToDo app",
+  "author": "TheConnMan",
+  "license": "MIT",
+  "devDependencies": {
+    "asar": "^0.8.3",
+    "electron-prebuilt": "^0.34.3",
+    "fs-jetpack": "^0.7.0",
+    "q": "^1.4.1",
+    "rcedit": "^0.3.0"
+  }
+}
