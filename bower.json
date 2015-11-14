@@ -20,6 +20,7 @@
     "angular-route": "~1.4.7",
     "semantic": "semantic-ui#~2.1.6",
     "jquery": "~2.1.4",
-    "jquery-timeago": "timeago#~1.4.3"
+    "jquery-timeago": "timeago#~1.4.3",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#~1.6.0"
   }
 }

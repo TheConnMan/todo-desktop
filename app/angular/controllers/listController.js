@@ -2,9 +2,37 @@
 	'use strict';
 
 	var app = angular.module('app');
-	app.controller('listController', ['$scope', '$filter', function($scope, $filter) {
+	app.controller('listController', ['$scope', '$filter', 'hotkeys', function($scope, $filter, hotkeys) {
 		$scope.adding = false;
 		$scope.newItem = '';
+
+		hotkeys.bindTo($scope).add({
+			combo: 'esc',
+			description: 'Cancel the addition of a new item',
+			callback: function(event, hotkey) {
+				$scope.adding = false;
+			}
+		});
+
+		hotkeys.bindTo($scope).add({
+			combo: 'enter',
+			description: 'Submit the new item input',
+			callback: function(event, hotkey) {
+				if ($scope.adding) {
+					$scope.submitItem();
+				}
+			}
+		});
+
+		hotkeys.bindTo($scope).add({
+			combo: 'q',
+			description: 'Start creating a new item',
+			callback: function(event, hotkey) {
+				if (!$scope.adding) {
+					$scope.createItem();
+				}
+			}
+		});
 
 		$scope.createItem = function() {
 			$scope.adding = true;
@@ -26,6 +54,10 @@
 			setTimeout(function() {
 				$('.timeago').timeago();
 			}, 0);
+		};
+
+		$scope.stopEditing = function() {
+			$scope.adding = false;
 		};
 
 		$scope.haveCompleted = function() {
