@@ -18,11 +18,13 @@
 				<div class="description">Created <abbr class="timeago" title="{{item.dateCreated}}"></abbr></div>
 			</div>
 		</div>
-		<div class="item" style="cursor: pointer;" ng-hide="adding" ng-click="createItem()">
-			<i class="middle aligned plus icon"></i>
-			<div class="content">
-				<div class="header">Add</div>
-			</div>
+		<div class="item" ng-hide="adding">
+			<button class="ui blue vertical animated button" ng-click="createItem()">
+				<div class="visible content">Add</div>
+				<div class="hidden content">
+					<i class="plus icon"></i>
+				</div>
+			</button>
 		</div>
 		<div class="item" ng-show="adding">
 			<i class="large green middle aligned plus icon"></i>
