@@ -18,10 +18,8 @@
   "dependencies": {
     "angular": "~1.4.7",
     "angular-route": "~1.4.7",
-    "angular-resource": "~1.4.7",
     "semantic": "semantic-ui#~2.1.6",
     "jquery": "~2.1.4",
-    "DateJS": "datejs#~1.0.0-rc3",
     "jquery-timeago": "timeago#~1.4.3"
   }
 }
