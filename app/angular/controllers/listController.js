@@ -25,6 +25,9 @@
 			};
 			$scope.items.push(item);
 			$scope.adding = false;
+			setTimeout(function() {
+				$('.timeago').timeago();
+			}, 0);
 		};
 	}]);
 })();

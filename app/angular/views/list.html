@@ -15,7 +15,7 @@
 			</div>
 			<div class="content">
 				<div class="header">{{item.name}}</div>
-				<div class="description">Created at {{item.dateCreated.format('H:m M/d/Y')}}</div>
+				<div class="description">Created <abbr class="timeago" title="{{item.dateCreated}}"></abbr></div>
 			</div>
 		</div>
 		<div class="item" style="cursor: pointer;" ng-hide="adding" ng-click="createItem()">
