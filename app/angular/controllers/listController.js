@@ -2,7 +2,7 @@
 	'use strict';
 
 	var app = angular.module('app');
-	app.controller('listController', ['$scope', function($scope) {
+	app.controller('listController', ['$scope', '$filter', function($scope, $filter) {
 		$scope.header = 'ToDo Header';
 		$scope.adding = false;
 		$scope.newItem = '';
@@ -27,6 +27,23 @@
 			setTimeout(function() {
 				$('.timeago').timeago();
 			}, 0);
+		};
+
+		$scope.haveCompleted = function() {
+			return $scope.getCompleted().length !== 0;
+		};
+
+		$scope.clearCompleted = function() {
+			var completed = $scope.getCompleted();
+			completed.forEach(function(item) {
+				var index = $scope.items.indexOf(item);
+				$scope.items.splice(index, 1);
+			});
+			$scope.saveItems();
+		};
+
+		$scope.getCompleted = function() {
+			return $filter('filter')($scope.items, {complete: true});
 		};
 
 		$scope.saveItems = function() {
