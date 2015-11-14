@@ -6,9 +6,7 @@
 		<i class="trash icon"></i>
 		Clear Completed
 	</div>
-	<h1 class="ui floated left header">
-		{{header}}
-	</h1>
+	<h1 class="ui floated left header">ToDo List</h1>
 	<div class="ui divider" style="clear: both;"></div>
 	<div class="ui large relaxed list">
 		<div class="item" ng-repeat="item in items | orderBy: ['complete', 'name'] as item track by item.dateCreated" ng-class="{complete: item.complete}">
@@ -34,7 +32,6 @@
 			</button>
 		</div>
 		<div class="item" ng-show="adding">
-			<i class="large green middle aligned plus icon"></i>
 			<div class="content">
 				<div class="ui action input">
 					<input id="itemName" type="text" ng-model="newItem" />

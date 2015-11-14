@@ -3,7 +3,6 @@
 
 	var app = angular.module('app');
 	app.controller('listController', ['$scope', '$filter', function($scope, $filter) {
-		$scope.header = 'ToDo Header';
 		$scope.adding = false;
 		$scope.newItem = '';
 
