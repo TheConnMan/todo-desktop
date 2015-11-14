@@ -4,8 +4,15 @@
 <div class="ui compact segment" style="margin: 0 auto; width: 400px;">
 	<h1 class="ui dividing header">{{header}}</h1>
 	<div class="ui large relaxed list">
-		<div class="item" ng-repeat="item in items">
-			<i class="large middle aligned check icon"></i>
+		<div class="item" ng-repeat="item in items" ng-class="{complete: item.complete}">
+			<div class="right floated content" ng-mouseenter="item.hover = true" ng-mouseleave="item.hover = false">
+				<div class="ui large basic circular icon button" ng-hide="item.complete" ng-class="{green: item.hover}" ng-click="item.complete = true">
+					<i class="check icon"></i>
+				</div>
+				<div class="ui large basic circular icon button" ng-show="item.complete" ng-class="{red: item.hover}" ng-click="item.complete = false">
+					<i class="undo icon"></i>
+				</div>
+			</div>
 			<div class="content">
 				<div class="header">{{item.name}}</div>
 				<div class="description">Created at {{item.dateCreated.format('H:m M/d/Y')}}</div>

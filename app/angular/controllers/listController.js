@@ -20,7 +20,8 @@
 		$scope.submitItem = function() {
 			var item = {
 				name: $scope.newItem,
-				dateCreated: new Date()
+				dateCreated: new Date(),
+				complete: false
 			};
 			$scope.items.push(item);
 			$scope.adding = false;

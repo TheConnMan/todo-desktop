@@ -1,0 +1,7 @@
+.item .content:not(.right) {
+	display: inline-block;
+}
+
+.item.complete .content {
+	opacity: .25;
+}
